@@ -73,6 +73,7 @@ nohup nice $moses/scripts/training/train-model.perl --root-dir train -corpus $co
 
 echo "Downloading tuning corpus"
 mkdir $corpus/tune
+cd $corpus/tune
 wget http://www.statmt.org/wmt12/dev.tgz
 tar -zxvf dev.tgz
 
