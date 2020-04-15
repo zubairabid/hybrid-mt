@@ -1,10 +1,11 @@
 #!/bin/bash
 echo "Script to hopefully install moses, and then setup with data"
 # Setting up main work directory
+base_dir=`pwd`
+corpus=$base_dir"/data/wmt-14"
 mkdir baselinesmt
 cd baselinesmt
 base_dir=`pwd`
-corpus=$base_dir"/data/wmt-14"
 moses=$base_dir"/mosesdecoder"
 giza=$base_dir"/giza-pp"
 lm=$base_dir"/lm"
@@ -51,7 +52,7 @@ $moses/scripts/recaser/truecase.perl --model $corpus/model/truecase-model.en < $
 $moses/scripts/recaser/truecase.perl --model $corpus/model/truecase-model.fr < $corpus/tokenized/europarl-v7.fr-en.tok.fr > $corpus/tokenized/europarl-v7.fr-en.true.fr
 
 echo "Cleaning"
-$moses/scripts/training/clean-corpus-n.perl $corpus/tokenized/europarl-v7.fr-en/true en fr $corpus/clean/europarl-v7.fr-en.clean 2 80
+$moses/scripts/training/clean-corpus-n.perl  $corpus/tokenized/europarl-v7.fr-en.true en fr $corpus/clean/europarl-v7.fr-en.clean 2 80
 
 echo "#######################"
 echo "Language model training"
