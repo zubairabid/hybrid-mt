@@ -5,7 +5,7 @@ from nltk.tokenize import ToktokTokenizer
 
 def load_parallel(path, prefix, l1, l2):
     l1_path = path+'/'+prefix+'.'+l1
-    l2_path = path+'/'++prefix+'.'.l2
+    l2_path = path+'/'+prefix+'.'+l2
 
     l1_all_sentences = []
     l2_all_sentences = []
@@ -110,7 +110,7 @@ def load_europarl(directory):
 import sys
 if __name__ == "main":
     if len(sys.argv) < 2:
-        print("Execution: python {0} <filename>".format(sys.argv[0])}
+        print("Execution: python {0} <filename>".format(sys.argv[0]))
     else:
         load_europarl(sys.argv[1])
 
