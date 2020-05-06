@@ -1,2 +1,9 @@
 data/
+scripts/subword-nmt/
+scripts/mosesdecoder/
 tags
+baselinesmt/phrase-table.gz
+opennmt/preprocessed/
+souvik/
+__pycache__/
+opennmt/OpenNMT-py/
